@@ -5,7 +5,9 @@
 ## 1. Pha 1: ba ca khó tôi tìm ra trong 40 ảnh
 | Ảnh | v0 không trả lời được gì | Quyết định ban đầu của tôi |
 |---|---|---|
-| img_0xx | | |
+| img_027 | không phải phương tiện lưu thông trên đường | không gán nhãn |
+| img_033 | không nhận diện được phương tiện | không gán nhãn |
+| img_038 | không phải phương tiện lưu thông trên đường | không gán nhãn |
 
 ## 2. Pha 2: chỗ tôi bất đồng với nhóm
 - Chỗ nào bản của tôi khác bản của bạn? Cuối cùng nhóm chốt gì, tôi đồng ý / chưa đồng ý vì sao?
@@ -20,6 +22,7 @@
 
 ## 5. Dùng AI
 - Công cụ nào, cho việc gì, bạn kiểm tra kết quả thế nào? (Ghi "không dùng" nếu không dùng.)
-
+lam bang com
 ## 6. Bài học
 - Một điều tôi sẽ làm khác khi viết guideline lần sau:
+toibingu
