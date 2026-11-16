@@ -1,41 +1,82 @@
 image,object_id,error_type,reviewer,rule_id,region,note
-img_001.jpg,,,,,,
-img_002.jpg,,,,,,
-img_003.jpg,,,,,,
-img_004.jpg,,,,,,
-img_005.jpg,,,,,,
-img_006.jpg,,,,,,
-img_007.jpg,,,,,,
-img_008.jpg,,,,,,
-img_009.jpg,,,,,,
-img_010.jpg,,,,,,
-img_011.jpg,,,,,,
-img_012.jpg,,,,,,
-img_013.jpg,,,,,,
-img_014.jpg,,,,,,
-img_015.jpg,,,,,,
-img_016.jpg,,,,,,
-img_017.jpg,,,,,,
-img_018.jpg,,,,,,
-img_019.jpg,,,,,,
-img_020.jpg,,,,,,
-img_021.jpg,,,,,,
-img_022.jpg,,,,,,
-img_023.jpg,,,,,,
-img_024.jpg,,,,,,
-img_025.jpg,,,,,,
-img_026.jpg,,,,,,
-img_027.jpg,,,,,,
-img_028.jpg,,,,,,
-img_029.jpg,,,,,,
-img_030.jpg,,,,,,
-img_031.jpg,,,,,,
-img_032.jpg,,,,,,
-img_033.jpg,,,,,,
-img_034.jpg,,,,,,
-img_035.jpg,,,,,,
-img_036.jpg,,,,,,
-img_037.jpg,,,,,,
-img_038.jpg,,,,,,
-img_039.jpg,,,,,,
-img_040.jpg,,,,,,
+img_001.jpg,,bo_sot,105,R-05,"người ngồi sau #3, x≈340–420",người ngồi sau chưa có box
+img_001.jpg,2,sai_vi_tri_kich_thuoc,105,R-01,,box hụt ~70px bên trái
+img_002.jpg,17,sai_thuoc_tinh,105,R-12,,"occ=0 nhưng bị cột cam che, nên là 1"
+img_002.jpg,16,sai_thuoc_tinh,105,R-12,,"occ=0 nhưng bị cột cam che, nên là 1"
+img_003.jpg,21,sai_vi_tri_kich_thuoc,105,R-01,,"box gộp xe máy với xe đạp, rộng"
+img_003.jpg,36,sai_vi_tri_kich_thuoc,105,R-01,,đáy box lấn xuống rổ
+img_003.jpg,20,sai_vi_tri_kich_thuoc,105,R-01,,box rộng
+img_003.jpg,36,sai_thuoc_tinh,105,R-04,,chạm mép ảnh nhưng truncated=no
+img_003.jpg,35,sai_thuoc_tinh,105,R-04,,chạm mép ảnh nhưng truncated=no
+img_003.jpg,34,sai_thuoc_tinh,105,R-04,,chạm mép ảnh nhưng truncated=no
+img_003.jpg,27,sai_thuoc_tinh,105,R-04,,chạm mép ảnh nhưng truncated=no
+img_004.jpg,43,sai_thuoc_tinh,105,R-12,,occ=0 dù ngồi sau khung kính
+img_005.jpg,,bo_sot,105,R-05,xe máy dưới người lái phía trước,xe máy của người lái chưa có box
+img_005.jpg,,bo_sot,105,R-05,xe máy thứ hai dưới người lái,xe máy của người lái chưa có box
+img_005.jpg,,bo_sot,105,R-10,người đội mũ hồng phía sau,người chưa có box
+img_005.jpg,,bo_sot,105,R-10,người đội mũ be phía sau,người chưa có box
+img_005.jpg,49,sai_vi_tri_kich_thuoc,105,R-02,,một box gộp 2 người
+img_005.jpg,46,sai_thuoc_tinh,105,R-04,,chạm mép phải nhưng truncated=no
+img_006.jpg,,bo_sot,105,R-10,"người ở nền, mép phải ảnh",vài người nền chưa có box (xe đạp không gán theo 2.1)
+img_006.jpg,55,sai_vi_tri_kich_thuoc,105,R-01,,box hơi rộng
+img_007.jpg,,khong,105,,,
+img_008.jpg,,bo_sot,105,R-05,người trên xe đỏ bên trái,người lái chưa có box
+img_008.jpg,,bo_sot,105,R-10,xe máy bên phải,xe máy chưa có box
+img_008.jpg,,bo_sot,105,R-10,người đi bộ bên phải,người chưa có box
+img_008.jpg,83,thua,105,R-02,,trùng với #69 (IoU ~0.67)
+img_008.jpg,84,sai_thuoc_tinh,105,R-04,,chạm mép nhưng truncated=no
+img_008.jpg,75,sai_thuoc_tinh,105,R-04,,chạm mép nhưng truncated=no
+img_009.jpg,,bo_sot,105,R-05,"người trên xe góc phải, x≈870–905",người lái chưa có box
+img_009.jpg,,bo_sot,105,R-10,người ở cửa nhà,người chưa có box
+img_009.jpg,96,sai_thuoc_tinh,105,R-04,,chạm mép nhưng truncated=no
+img_010.jpg,101,thua,105,R-14,,"box person nằm trên đuôi xe máy, không phải người"
+img_011.jpg,119,thua,105,R-07,,"xe máy kim loại là tác phẩm điêu khắc, không gán"
+img_011.jpg,111,sai_lop,105,R-13,,gán van nhưng là car (105 đã xác nhận)
+img_012.jpg,,bo_sot,105,R-10,"xe bạc phía sau, x≈333–378, y≈320–395",sót xe (105 đã xác nhận)
+img_012.jpg,122,sai_thuoc_tinh,105,R-04,,cắt mép phải và đáy nhưng truncated=no
+img_012.jpg,121,sai_thuoc_tinh,105,R-12,,occ=0 dù bị thùng xe che
+img_013.jpg,128,thua,105,R-02,,"trùng với #129, vật rất nhỏ (105 đã xác nhận)"
+img_014.jpg,,khong,105,,,
+img_015.jpg,,bo_sot,105,R-10,"xe sau xe bạc bên phải, x≈735–830, y≈105–190",xe chưa có box
+img_016.jpg,,bo_sot,105,R-05,"tài xế tuk-tuk bên trái, x≈20–130, y≈380–490",người lái chưa có box
+img_016.jpg,,bo_sot,105,R-05,hành khách phía sau tuk-tuk #144,hành khách chưa có box
+img_016.jpg,142,sai_lop,105,R-13,,"xe bán tải gán car, phải là truck"
+img_017.jpg,,khong,105,,,
+img_018.jpg,154,sai_thuoc_tinh,105,R-12,,occ=0 dù hàng rào che
+img_018.jpg,153,sai_thuoc_tinh,105,R-12,,occ=0 dù hàng rào che
+img_019.jpg,,bo_sot,105,R-08,"đầu khán giả góc dưới phải, ngoài vùng ignore",khán giả nằm ngoài ignore_region
+img_019.jpg,155,sai_vi_tri_kich_thuoc,105,R-08,,vùng ignore chồng lên mui xe
+img_020.jpg,,khong,105,,,
+img_021.jpg,,bo_sot,105,R-05,xe máy dưới người đội nón xanh,xe máy của người lái chưa có box
+img_021.jpg,,bo_sot,105,R-05,xe máy dưới người lái bên trái,xe máy của người lái chưa có box
+img_022.jpg,,bo_sot,105,R-10,"xe nhỏ ở xa, x≈290–330, y≈447–460",sót xe (105 đã xác nhận)
+img_023.jpg,,khong,105,,,
+img_024.jpg,,bo_sot,105,R-04,xe cam góc dưới trái (bị mép cắt),xe chưa có box
+img_024.jpg,,bo_sot,105,R-10,"xe be sau xe kem, x≈170–300, y≈208–250",xe chưa có box
+img_024.jpg,200,thua,105,R-07,,"vỏ xe vàng trên nóc là mô hình, không gán"
+img_024.jpg,199,sai_thuoc_tinh,105,R-12,,occ=0 dù bị xe Pacer che
+img_024.jpg,195,sai_thuoc_tinh,105,R-04,,chạm mép phải nhưng truncated=no
+img_025.jpg,,bo_sot,105,R-10,người ở xa,sót người (105 đã xác nhận)
+img_026.jpg,,khong,105,,,
+img_027.jpg,,khong,105,,,
+img_028.jpg,,khong,105,,,
+img_029.jpg,,khong,105,,,
+img_030.jpg,234,sai_vi_tri_kich_thuoc,105,R-08,,"vùng ignore phủ gần cả ảnh, chồng lên box"
+img_030.jpg,232,sai_thuoc_tinh,105,R-04,,cắt mép dưới nhưng truncated=no
+img_030.jpg,231,sai_thuoc_tinh,105,R-04,,cắt mép dưới nhưng truncated=no
+img_030.jpg,230,sai_thuoc_tinh,105,R-04,,cắt mép dưới và phải nhưng truncated=no
+img_031.jpg,,bo_sot,105,R-05,người lái của xe #240,người lái chưa có box
+img_031.jpg,,bo_sot,105,R-05,người lái của xe #246,người lái chưa có box
+img_031.jpg,,bo_sot,105,R-05,người lái của xe #235,người lái chưa có box
+img_032.jpg,,bo_sot,105,R-10,"xe nhỏ mép phải, x≈925–960, y≈278–325",xe chưa có box
+img_032.jpg,247,sai_vi_tri_kich_thuoc,105,R-01,,đỉnh box rộng ~20px
+img_033.jpg,,khong,105,,,
+img_034.jpg,270,sai_thuoc_tinh,105,R-04,,chạm mép nhưng truncated=no
+img_034.jpg,258,sai_thuoc_tinh,105,R-04,,chạm mép nhưng truncated=no
+img_035.jpg,,bo_sot,105,R-05,"tài xế của #276, x≈420–470, y≈230–275",người lái chưa có box
+img_035.jpg,281,sai_thuoc_tinh,105,R-12,,occ=0 dù bị #277 che
+img_036.jpg,288,sai_thuoc_tinh,105,R-04,,chạm mép nhưng truncated=no
+img_037.jpg,291,sai_lop,105,R-08,,"ignore phủ xe buýt nhìn thấy rõ, phải là bus với occluded cao"
+img_038.jpg,,khong,105,,,
+img_039.jpg,,bo_sot,105,R-10,"xe máy đỗ bên trái, x≈18–55, y≈415–495",xe máy chưa có box
+img_040.jpg,316,sai_vi_tri_kich_thuoc,105,R-01,,box gồm cả mái xám lệch

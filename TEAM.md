@@ -31,6 +31,11 @@
 - Lượt gán hoàn tất / được giao: 120/120
 - IAA trước calibration (kèm mẫu số): IoU TB 0.815 / 518 cặp box ghép; cùng lớp 97.3%; CHƯA ĐẠT (ngưỡng IoU 0.85)
 - Số ảnh phải calibration: 35 / 40
-- Vòng QC và số ảnh đã duyệt / cả lô:
-- Tỉ lệ lỗi: … % theo ảnh (…/…), … % theo đối tượng (…/…)
-- **Quyết định** (Release / Hold / Rework) và lý do một dòng:
+- Vòng QC và số ảnh đã duyệt / cả lô: vòng 1, 40/40
+- Tỉ lệ lỗi: 72.5% theo ảnh (29/40), 12.5% theo đối tượng (38/305)
+- **Quyết định** (Release / Hold / Rework) và lý do một dòng: **HOLD** — còn 6 box `can_review` chưa chốt; gỡ xong vẫn Rework vì 72.5% ảnh lỗi > 2% (lỗi lặp: thiếu người lái/xe, truncated, occluded).
+
+## Ghi chú phiên bản guideline
+
+- Guideline v1.0 (`guideline_v1.0_agreed.md`) được cả nhóm 101–105 xác nhận và khóa ở buổi họp Pha 2, dùng nguyên cho Pha 3. Dòng "BẢN NHÁP" trong file là chữ còn sót lại từ lúc soạn; không sửa vì file đã được băm làm đầu vào IAA (sửa sẽ làm lệch bằng chứng).
+- Guideline v1.1 (`guideline_v1.1_calibrated.md`) được cả nhóm đọc và đồng ý ngày 16/11/2026 trước khi sửa nhãn ở Pha 5.
