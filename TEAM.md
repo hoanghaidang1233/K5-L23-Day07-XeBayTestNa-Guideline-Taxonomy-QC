@@ -12,7 +12,7 @@
 |---|---|---|
 | 101 | Hoàng Hải Đăng | Điều phối / Git / nộp bài |
 | 102 | Trịnh Vinh Khánh | Biên tập guideline |
-| 103 | Nguyễn Thiện Phúc | Taxonomy & CVAT |
+| 103 | Nguyễn Thiên Phúc | Taxonomy & CVAT |
 | 104 | Nguyễn Khánh Trình | IAA & Calibration |
 | 105 | Trần Ngọc Quân | Reviewer QC |
 
