@@ -8,13 +8,15 @@
 
 ## Thành viên
 
-| Mã | Thành viên | Vai trò |
-|---|---|---|
-| 101 | Hoàng Hải Đăng | Điều phối / Git / nộp bài |
-| 102 | Trịnh Vinh Khánh | Biên tập guideline |
-| 103 | Nguyễn Thiên Phúc | Taxonomy & CVAT |
-| 104 | Nguyễn Khánh Trình | IAA & Calibration |
-| 105 | Trần Ngọc Quân | Reviewer QC |
+| Mã | Vai trò |
+|---|---|
+| 101 | Điều phối / Git / nộp bài |
+| 102 | Biên tập guideline |
+| 103 | Taxonomy & CVAT |
+| 104 | IAA & Calibration |
+| 105 | Reviewer QC |
+
+Repo để public theo yêu cầu của coach; bảng đối chiếu mã ↔ họ tên gửi riêng cho coach.
 
 ## Phân công
 
@@ -32,7 +34,7 @@
 - IAA trước calibration (kèm mẫu số): IoU TB 0.815 / 518 cặp box ghép; cùng lớp 97.3%; CHƯA ĐẠT (ngưỡng IoU 0.85)
 - Số ảnh phải calibration: 35 / 40
 - Vòng QC và số ảnh đã duyệt / cả lô: vòng 1, 40/40
-- Tỉ lệ lỗi: 72.5% theo ảnh (29/40), 12.5% theo đối tượng (38/305)
+- Tỉ lệ lỗi: 72.5% theo ảnh (29/40), 12.8% theo đối tượng (39/305)
 - **Quyết định** (Release / Hold / Rework) và lý do một dòng: **HOLD** — còn 6 box `can_review` chưa chốt; gỡ xong vẫn Rework vì 72.5% ảnh lỗi > 2% (lỗi lặp: thiếu người lái/xe, truncated, occluded).
 
 ## Ghi chú phiên bản guideline

@@ -3,6 +3,7 @@ img_001.jpg,,bo_sot,105,R-05,"người ngồi sau #3, x≈340–420",người ng
 img_001.jpg,2,sai_vi_tri_kich_thuoc,105,R-01,,box hụt ~70px bên trái
 img_002.jpg,17,sai_thuoc_tinh,105,R-12,,"occ=0 nhưng bị cột cam che, nên là 1"
 img_002.jpg,16,sai_thuoc_tinh,105,R-12,,"occ=0 nhưng bị cột cam che, nên là 1"
+img_002.jpg,15,sai_lop,105,R-08,,"van cao 13px < 20px, phải là ignore_region"
 img_003.jpg,21,sai_vi_tri_kich_thuoc,105,R-01,,"box gộp xe máy với xe đạp, rộng"
 img_003.jpg,36,sai_vi_tri_kich_thuoc,105,R-01,,đáy box lấn xuống rổ
 img_003.jpg,20,sai_vi_tri_kich_thuoc,105,R-01,,box rộng

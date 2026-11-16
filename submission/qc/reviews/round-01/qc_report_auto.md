@@ -5,7 +5,7 @@
 ## Vòng 1 — full
 - Ảnh đã duyệt 40/40; cả lô 40 ảnh.
 - Ảnh có lỗi trên ảnh đã duyệt: 29/40 = 72.5%.
-- Annotation đối tượng hiện có bị lỗi: 38/305 = 12.5%.
+- Annotation đối tượng hiện có bị lỗi: 39/305 = 12.8%.
 - Vật bỏ sót ghi riêng: 28.
 - IAA trước calibration dùng để chẩn đoán; đối chiếu iaa_summary.md.
 - ca_kho: đã duyệt 35/35, ảnh có lỗi 29/35 = 82.9%.
