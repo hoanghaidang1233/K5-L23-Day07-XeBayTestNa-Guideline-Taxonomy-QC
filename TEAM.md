@@ -26,10 +26,11 @@
 | 104 | IAA & Calibration | `image_issues.csv`, `qc_compare.py`, `viz_disagreement.py`, `calibration_decisions.csv`, `prepare_calibration.py`, `build_final.py` |
 | 105 | Reviewer QC | `qc_sample.py`, phiếu `reviews/round-XX/qc_review.csv`, `qc_report.py`, `QC_REPORT.md` |
 
-## Kết quả tóm tắt
+## Kết quả tóm tắt (điền cuối bài)
 
-- Pilot hay cả bộ 40 ảnh:
 - Lượt gán hoàn tất / được giao:
 - IAA trước calibration (kèm mẫu số):
+- Số ảnh phải calibration: … / 40
 - Vòng QC và số ảnh đã duyệt / cả lô:
-- Quyết định và lý do:
+- Tỉ lệ lỗi: … % theo ảnh (…/…), … % theo đối tượng (…/…)
+- **Quyết định** (Release / Hold / Rework) và lý do một dòng:

@@ -5,5 +5,3 @@
 
 Ảnh dùng cho mục đích học tập; khi chia sẻ lại cần giữ ghi công và điều kiện giấy phép của từng ảnh
 (CC BY-SA yêu cầu chia sẻ tương tự). **Không sửa, đổi tên hay thêm bớt ảnh** — script chia việc và so sánh dựa vào tên file.
-
-Danh sách [12 ảnh pilot](pilot_images.txt) dùng để gán độc lập và duyệt cả lô. Khảo sát cả 40 ảnh khi viết guideline.

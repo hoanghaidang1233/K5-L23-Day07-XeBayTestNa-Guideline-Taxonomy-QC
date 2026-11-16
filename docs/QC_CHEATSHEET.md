@@ -1,21 +1,50 @@
-# Đọc số đo và ra quyết định QC
+# Tóm tắt QC
 
-| Chỉ số | Đơn vị và mẫu số |
-|---|---|
-| Độ phủ | Lượt gán hợp lệ trên tổng lượt trong `assignment.csv`. Ảnh không có đối tượng vẫn tính vào độ phủ. |
-| IAA | IoU trung bình và tỷ lệ cùng lớp chỉ tính trên cặp box ghép 1–1 không phân biệt lớp, với IoU ghép từ 0.5. Với ba người, một ảnh đóng góp ba cặp người. Không có cặp thì ghi N/A. |
-| Ngưỡng IAA của lab | IoU TB ≥ 0.85, cùng lớp ≥ 95%. Dùng để tìm điểm cần calibration. Giữ kết quả trước calibration trong hồ sơ. |
-| Box bất đồng | Đếm riêng box chưa ghép và box nằm trong vùng ignore của cả hai người. Nếu chỉ một người đặt vùng phủ box thì đưa ca vào calibration. Rà khác biệt vùng ignore và kiểm ca cả nhóm cùng sai bằng ảnh tham chiếu. |
-| Ngưỡng IoU theo box của lab | Cặp có chiều cao box trung bình từ 50 px dùng 0.85, nhỏ hơn dùng 0.7. Vật cao dưới 20 px cần đối chiếu quy tắc vật nhỏ và ignore. |
-| Lỗi theo ảnh | Ảnh có ít nhất một lỗi trên số ảnh đã duyệt. Release của lab dùng ngưỡng ≤ 2% và yêu cầu duyệt toàn bộ. Lô tối đa 40 ảnh nên một ảnh lỗi đã vượt ngưỡng. |
-| Lỗi annotation đối tượng | Số ID annotation đối tượng hiện có bị lỗi trên số annotation đối tượng trong ảnh đã duyệt. Đếm lỗi bỏ sót riêng theo vùng cho mỗi vật, vì chưa có annotation. |
+## Ngưỡng và cách đếm
 
-Ghi số đo dạng `tử số/mẫu số`. Với vòng demo lấy mẫu, so sánh nhóm ca bị cờ và nhóm ngẫu nhiên riêng. Kết quả mẫu áp dụng cho ảnh đã duyệt. Xem [NIST về lấy mẫu theo lô](https://itl.nist.gov/div898/handbook/pmc/section2/pmc21.htm) hoặc [ISO 2859-1:2026](https://www.iso.org/standard/85464.html) để hiểu cách xây dựng kế hoạch nghiệm thu bằng mẫu.
+| Đại lượng | Công thức / quy tắc | Ngưỡng của lab |
+|---|---|---|
+| IoU | giao / hợp của hai box | box cao ≥ 50 px: 0.85; nhỏ hơn: 0.7 |
+| IAA | IoU trung bình và % cùng lớp, **chỉ trên cặp box ghép 1–1** (không phân biệt lớp, IoU ghép ≥ 0.5) | IoU TB ≥ 0.85, cùng lớp ≥ 95% |
+| Độ phủ | lượt gán hợp lệ / tổng lượt trong `assignment.csv` | đủ 100% mới đo IAA |
+| Vật nhỏ | cao < 20 px | `ignore_region`, đối chiếu quy tắc vật nhỏ |
+| Lỗi theo **ảnh** | ảnh có ≥ 1 lỗi / ảnh đã duyệt | **≤ 2%** mới Release |
+| Lỗi theo **đối tượng** | annotation đối tượng bị lỗi / annotation đã duyệt | báo kèm mẫu số |
 
-## Gợi ý quyết định
+- Số đo luôn ghi dạng `tử số/mẫu số`. Không có cặp box thì ghi N/A.
+- Với ba người, một ảnh đóng góp ba cặp người.
+- Box chưa ghép được đếm riêng. Chỉ một người đặt vùng `ignore_region` phủ box thì đưa ca vào calibration.
+- Release của lab yêu cầu **duyệt toàn bộ lô**. Lô 40 ảnh: một ảnh lỗi (2,5%) đã vượt ngưỡng.
+- Vòng demo chỉ lấy mẫu: luôn là **Hold** khi bàn giao.
+- Giữ IAA **trước** calibration trong hồ sơ.
 
-1. **Hold** nếu thiếu bằng chứng, dữ liệu/guideline còn vấn đề, review lệch phiên bản hoặc mới chỉ lấy mẫu.
-2. **Rework** nếu tỷ lệ ảnh lỗi vượt ngưỡng hoặc có lỗi lặp theo quy tắc của lab. Ghi nguyên nhân, người sửa và kết quả kiểm lại.
+## Năm loại lỗi (trong `qc_review.csv`)
+
+| `error_type` | Loại | Ví dụ |
+|---|---|---|
+| `bo_sot` | Bỏ sót | vật thật không có box (để trống `object_id`, ghi `region`) |
+| `thua` | Thừa | box trên tượng / phản chiếu / hình in |
+| `sai_lop` | Sai lớp | xe con gán `truck` |
+| `sai_vi_tri_kich_thuoc` | Sai vị trí, kích thước | box lỏng, thiếu đuôi xe |
+| `sai_thuoc_tinh` | Sai thuộc tính | `occluded_level` sai mức |
+| `khong` | Không lỗi | ảnh đã duyệt, sạch |
+
+Một ảnh có thể có nhiều lỗi (mỗi lỗi một dòng). Quy định từng dòng: [scripts/README.md](../scripts/README.md#phiếu-qc).
+
+## Cây quyết định: Hold → Rework → Release
+
+1. **Hold** nếu thiếu bằng chứng, guideline / dữ liệu còn vấn đề, review lệch phiên bản, hoặc mới chỉ lấy mẫu.
+2. **Rework** nếu > 2% ảnh lỗi hoặc có **lỗi lặp** theo quy tắc của lab. Ghi nguyên nhân, người sửa, kết quả kiểm lại.
 3. **Release** khi reviewer xác nhận bằng chứng đạt yêu cầu bàn giao lô thực hành.
 
-Một ảnh có thể có nhiều lỗi. Đọc quy định từng dòng phiếu ở [README của script](../scripts/README.md#phiếu-qc).
+Lỗi ít nhưng lặp cùng một kiểu vẫn là Rework: đó là lỗi hệ thống.
+
+## IAA thấp thì sửa gì?
+
+| Dấu hiệu | Nguyên nhân | Xử lý |
+|---|---|---|
+| Cả hai lệch cùng loại ca | quy tắc mơ hồ | sửa guideline |
+| Chỉ một người lệch | chưa nắm quy tắc | hướng dẫn lại |
+| Giống nhau nhưng cùng sai | cùng hiểu sai | đối chiếu ca tham chiếu |
+
+Muốn hiểu thêm về lấy mẫu nghiệm thu: [NIST](https://itl.nist.gov/div898/handbook/pmc/section2/pmc21.htm) · [ISO 2859-1:2026](https://www.iso.org/standard/85464.html).

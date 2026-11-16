@@ -25,8 +25,6 @@ def main() -> None:
     ap.add_argument("--seed", type=int, default=42, help="Seed ngẫu nhiên (mặc định 42; cả nhóm dùng chung).")
     ap.add_argument("--copy-images", action="store_true",
                     help="Copy ảnh được giao vào work/<mã>/images/ để upload lên CVAT.")
-    ap.add_argument("--all-images", action="store_true",
-                    help="Dùng toàn bộ ảnh thay vì 12 ảnh pilot mặc định.")
     args = ap.parse_args()
 
     members = [m.strip() for m in args.members.split(",") if m.strip()]
@@ -55,11 +53,6 @@ def main() -> None:
         die(f"Không thấy ảnh trong {rel(IMAGES_DIR)}. Hãy lấy ảnh theo hướng dẫn trong README (tải/giải nén vào data/images/).")
 
     all_images = set(images)
-    if not args.all_images:
-        pilot = (ROOT / "data" / "pilot_images.txt").read_text(encoding="utf8").splitlines()
-        if not pilot or len(set(pilot)) != len(pilot) or set(pilot) - set(images):
-            die("Danh sách pilot bị thiếu, trùng hoặc chứa ảnh ngoài bộ dữ liệu.")
-        images = pilot
 
     rng = random.Random(args.seed)
     load = {m: 0 for m in members}

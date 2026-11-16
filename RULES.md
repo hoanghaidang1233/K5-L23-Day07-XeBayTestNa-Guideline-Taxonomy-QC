@@ -1,8 +1,28 @@
 # Quy tắc làm bài
 
-- Nhóm 2–5 người. Mỗi thành viên có guideline, nhãn và ghi chú riêng. Mọi người làm cùng một phạm vi và cùng tiêu chí QC.
-- Viết guideline cá nhân và gán nhãn độc lập. Gửi riêng mỗi bản cho tới khi cả nhóm hoàn tất chặng đó. Lúc gán dùng đúng v1.0 đã khóa. Để lại cờ hoặc ghi vấn đề ở cấp ảnh thay vì xem trước nhãn của bạn.
-- Có thể dùng AI để giải thích khái niệm, gợi ý script hoặc sửa chính tả. Ghi cách kiểm lại trong ghi chú. Day 07 dùng người thật đưa ra quyết định và vẽ box; pre-label thuộc Day 08.
-- Giữ artifact tự động từ script. Nếu phát hiện lỗi trong script, ghi thay đổi và bằng chứng chạy lại. Giữ trường `rules` trong taxonomy. Số liệu phải phản ánh những gì nhóm thực sự làm.
-- Dùng mã thành viên trong artifact. Nộp riêng tư theo [SUBMISSION.md](SUBMISSION.md). Giữ ghi công ảnh, tránh đưa thêm thông tin cá nhân hoặc thông tin đăng nhập vào gói nộp.
-- Người kiểm xác nhận quyết định bằng nhãn và ảnh. Hold hoặc Rework có căn cứ là kết quả hợp lệ. Thời hạn và kênh nộp do coach công bố. Bài gửi sau hạn được xử lý theo quy định nộp muộn của lớp.
+## Hình thức
+
+- **Nhóm 2–5 người**, mỗi thành viên có guideline, nhãn và ghi chú riêng. Mọi người làm cùng phạm vi (40 ảnh) và cùng tiêu chí QC.
+- Dùng **mã thành viên** ba chữ số (ví dụ `101`) trong tên file, Task và nhật ký.
+
+## Độc lập
+
+- Viết guideline cá nhân và gán nhãn **độc lập**. Gửi riêng từng bản cho tới khi cả nhóm xong chặng đó.
+- Lúc gán dùng đúng v1.0 đã khóa. Chưa chắc thì tick `can_review` hoặc ghi vấn đề cấp ảnh; không xem nhãn của bạn để hỏi.
+- Họp nhóm ở Pha 2 và Pha 5.
+
+## AI
+
+- Được dùng AI để giải thích khái niệm, gợi ý script, sửa chính tả. Ghi cách bạn kiểm lại trong ghi chú cá nhân.
+- Day 07 dùng **người thật** quyết định và vẽ box. Pre-label bằng mô hình thuộc Day 08.
+
+## Số liệu trung thực
+
+- Giữ nguyên artifact do script sinh. Phát hiện bug thì ghi thay đổi và bằng chứng chạy lại.
+- Giữ nguyên mục `rules` (ngưỡng) trong `taxonomy.json`.
+- Không tạo nhãn, số đo, dòng QC hay quyết định chưa thực sự làm. Hold hoặc Rework có căn cứ là kết quả hợp lệ.
+
+## Dữ liệu và nộp bài
+
+- Giữ ghi công ảnh ([data/README.md](data/README.md)). Không đưa thêm thông tin cá nhân hay thông tin đăng nhập vào gói nộp.
+- Nộp **riêng tư** theo [SUBMISSION.md](SUBMISSION.md). Thời hạn và kênh do coach công bố; nộp muộn theo quy định của lớp.

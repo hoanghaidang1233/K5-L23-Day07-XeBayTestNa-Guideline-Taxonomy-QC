@@ -2,8 +2,8 @@
 
 ## Trước khi mở bài
 
-1. Chuẩn bị kênh nộp riêng, mã thành viên và một lần chạy với nhóm hai người. Dùng 40 ảnh để khảo sát guideline và [12 ảnh pilot](../data/pilot_images.txt) để gán và duyệt trọn lô. Ghi thời gian tạo Task, gán, export và review trước khi chốt nhịp lớp.
-2. Trên đúng instance CVAT của lớp, tạo pilot hai ảnh, một ảnh có box và thuộc tính, một ảnh không có đối tượng theo phạm vi. Export → import vào Task mới → export lại. So lớp, tọa độ, thuộc tính và số ảnh. Thử mở issue cấp vùng ảnh bằng tài khoản reviewer. Dùng CSV nếu tài khoản thiếu quyền Review.
+1. Chuẩn bị kênh nộp riêng, mã thành viên và một lần chạy với nhóm hai người. Dùng cả 40 ảnh để khảo sát guideline, gán và duyệt trọn lô. Ghi thời gian tạo Task, gán, export và review trước khi chốt nhịp lớp.
+2. Trên đúng instance CVAT của lớp, thử hai ảnh, một ảnh có box và thuộc tính, một ảnh không có đối tượng theo phạm vi. Export → import vào Task mới → export lại. So lớp, tọa độ, thuộc tính và số ảnh. Thử mở issue cấp vùng ảnh bằng tài khoản reviewer. Dùng CSV nếu tài khoản thiếu quyền Review.
 3. Chuẩn bị bộ tham chiếu riêng theo bảng dưới. Coach xem ảnh gốc, chốt quy tắc sử dụng cho ca và ghi chú nếu taxonomy của nhóm dùng phạm vi khác. Nếu dùng COCO tham chiếu, lưu người duyệt, ngày, phiên bản guideline và SHA-256. Chỉ mở sau khi đã thu nhãn độc lập. Bộ ca này phục vụ thảo luận và kiểm chung kết quả học, còn rubric chấm dựa trên bằng chứng của nhóm.
 
 | Ảnh gợi ý | Câu hỏi để coach xác nhận trước khi dạy |
@@ -12,7 +12,7 @@
 | `img_005.jpg`, `img_026.jpg` | So người và xe khi bị che/cắt mép với góc nhìn khác. Chốt số box, cách phân lớp và vẽ phần nhìn thấy theo mục đích của nhóm. |
 | `img_002.jpg` | Chốt riêng phạm vi xe chở và xe được chở. Yêu cầu người học chỉ ra ảnh khác có thể bị ảnh hưởng nếu đổi quy tắc. |
 
-Người mới có thể làm một ca có hướng dẫn ngoài tập pilot, chẳng hạn soi một ảnh đường phố trong 28 ảnh còn lại. Nhóm làm nhanh có thể giải thích một ca bỏ sót không ảnh hưởng IoU trung bình trên box đã ghép, hoặc so vòng lấy mẫu demo với duyệt toàn lô.
+Người mới có thể làm thêm một ca có hướng dẫn, chẳng hạn soi kỹ một ảnh đường phố chưa nằm trong bảng trên. Nhóm làm nhanh có thể giải thích một ca bỏ sót không ảnh hưởng IoU trung bình trên box đã ghép, hoặc so vòng lấy mẫu demo với duyệt toàn lô.
 
 ## Tài liệu đối chiếu
 

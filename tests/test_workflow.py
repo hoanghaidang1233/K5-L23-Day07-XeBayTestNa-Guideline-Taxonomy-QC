@@ -232,11 +232,11 @@ class WorkflowTest(unittest.TestCase):
         self.assertIn("**RELEASE**", self.run_script("qc_report", "--round", "2"))
 
     def test_assignment_rejects_unsafe_member_and_symlink_destination(self):
-        self.run_script("split_assign", "--members", "../data,102", "--copy-images", "--all-images", success=False)
+        self.run_script("split_assign", "--members", "../data,102", "--copy-images", success=False)
         output = self.root / "work"
         output.mkdir()
         (output / "101").symlink_to(self.root / "data", target_is_directory=True)
-        self.run_script("split_assign", "--members", "101,102", "--copy-images", "--all-images", success=False)
+        self.run_script("split_assign", "--members", "101,102", "--copy-images", success=False)
         self.assertEqual(sorted(path.name for path in self.images.iterdir()), self.names)
 
     def test_full_cli_handoff_checks_final_decision_and_rejects_tampering(self):
@@ -245,7 +245,7 @@ class WorkflowTest(unittest.TestCase):
         (self.root / "TEAM.md").write_text("101, 102", encoding="utf-8")
         (self.sub / "guidelines" / "individual").mkdir()
         (self.sub / "individual_notes").mkdir()
-        self.run_script("split_assign", "--members", "101,102", "--all-images", "--copy-images")
+        self.run_script("split_assign", "--members", "101,102", "--copy-images")
         self.run_script("make_cvat_labels")
         for member in ("101", "102"):
             self.coco(self.sub / "labels" / f"{member}.json")
