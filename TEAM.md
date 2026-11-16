@@ -8,13 +8,14 @@
 
 ## Thành viên
 
-| Mã | Vai trò |
-|---|---|
-| 101 | Điều phối / Git / nộp bài |
-| 102 | Biên tập guideline |
-| 103 | Taxonomy & CVAT |
-| 104 | IAA & Calibration |
-| 105 | Reviewer QC |
+ | Mã | Họ tên | Github | Vai trò |
+|---|---|---|---|
+| 101 | Hoàng Hải Đăng | hoanghaidang1233 | Điều phối / Git / nộp bài |
+| 102 | Trịnh Vinh Khánh | Khanh Trinh | Biên tập guideline |
+| 103 | Nguyễn Thiên Phúc | phucnt31 | Taxonomy & CVAT |
+| 104 | Nguyễn Khánh Trinh | khanhtrinhkt2014 | IAA & Calibration |
+| 105 | Trần Ngọc Quân | quanngoctran | Reviewer QC |
+
 
 Repo để public theo yêu cầu của coach; bảng đối chiếu mã ↔ họ tên gửi riêng cho coach.
 
