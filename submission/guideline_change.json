@@ -1,0 +1,4 @@
+{
+  "kind": "semantic",
+  "summary": "v1.1: đổi cách chấm occluded_level (đếm 4 phần) và bắt buộc chọn thuộc tính (R-12); định nghĩa cụm dày đặc cho ignore_region, không phủ vật tách được (R-08); liệt kê phần thuộc/không thuộc box (R-01, R-05); vật xa >= 20 px phải gán (R-10); phép thử ranh giới car/van/truck/bus (R-13) và box người/xe máy chồng nhau (R-14). Taxonomy giữ v1.0. Phạm vi: sửa và kiểm lại cả lô 40 ảnh."
+}

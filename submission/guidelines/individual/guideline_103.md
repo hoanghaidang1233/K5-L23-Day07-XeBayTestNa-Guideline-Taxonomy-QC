@@ -1,11 +1,11 @@
-# Guideline gán nhãn — <phiên bản> — <MSHV - Họ tên | Nhóm>
+# Guideline gán nhãn — bản cá nhân — 103 | Nhóm: XeBayTestNa
 
 > Copy file này (hoặc `guideline_v0_starter.md`) rồi viết. Một guideline đủ gồm **5 phần**. Câu nào của v0
 > làm hai người đọc ra hai cách khác nhau thì phải viết lại cho một cách hiểu duy nhất.
 
 - Phiên bản: v0
 - Ngày: 16/11/2026
-- Người viết / duyệt: Nguyễn Thiên Phúc
+- Người viết / duyệt: 103
 
 ## 1. Mục tiêu
 - Nhãn bounding box 2D được sử dụng để huấn luyện mô hình phát hiện đối tượng phục vụ hệ thống camera giám sát giao thông đô thị thông minh và hệ thống hỗ trợ lái xe tự động

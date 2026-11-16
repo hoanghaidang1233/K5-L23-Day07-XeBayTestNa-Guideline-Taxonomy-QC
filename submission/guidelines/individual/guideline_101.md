@@ -4,7 +4,7 @@ Bản cá nhân Pha 1 · 16/11/2026 · Bounding box trên CVAT, xuất COCO 1.0
 
 - Phiên bản: v1.0
 - Ngày: 16/11/2026
-- Người viết / duyệt: Hoàng Hải Đăng
+- Người viết / duyệt: 101
 ## 1. Mục tiêu
 
 Dạy mô hình **tìm người và xe** trên ảnh đường phố.

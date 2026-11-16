@@ -1,9 +1,8 @@
-# Guideline gán nhãn — bản nháp cá nhân — 2A202603026 - Nguyễn Khánh Trinh
+# Guideline gán nhãn — bản nháp cá nhân — 104
 
 - Phiên bản: bản nháp cá nhân trước họp nhóm; chưa phải guideline v1.0 thống nhất.
 - Ngày soạn: 2026-11-16.
-- Người hoàn thiện và chịu trách nhiệm quyết định: Nguyễn Khánh Trinh.
-- MSHV: 2A202603026.
+- Người hoàn thiện và chịu trách nhiệm quyết định: 104.
 - Tám ảnh được cung cấp để ghi ca: img_025.jpg đến img_032.jpg.
 - Trạng thái khảo sát đủ 40 ảnh: [TỰ ĐIỀN: đã/chưa; nếu coach cho phạm vi khác, ghi rõ].
 

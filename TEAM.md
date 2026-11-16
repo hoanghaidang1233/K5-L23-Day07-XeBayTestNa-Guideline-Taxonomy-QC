@@ -28,9 +28,9 @@
 
 ## Kết quả tóm tắt (điền cuối bài)
 
-- Lượt gán hoàn tất / được giao:
-- IAA trước calibration (kèm mẫu số):
-- Số ảnh phải calibration: … / 40
+- Lượt gán hoàn tất / được giao: 120/120
+- IAA trước calibration (kèm mẫu số): IoU TB 0.815 / 518 cặp box ghép; cùng lớp 97.3%; CHƯA ĐẠT (ngưỡng IoU 0.85)
+- Số ảnh phải calibration: 35 / 40
 - Vòng QC và số ảnh đã duyệt / cả lô:
 - Tỉ lệ lỗi: … % theo ảnh (…/…), … % theo đối tượng (…/…)
 - **Quyết định** (Release / Hold / Rework) và lý do một dòng:

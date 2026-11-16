@@ -1,11 +1,11 @@
-# Guideline gán nhãn — v0 — <2A202603220 - Trịnh Vinh Khánh | Nhóm: Xe Bay TestNa>
+# Guideline gán nhãn — v0 — 102 | Nhóm: XeBayTestNa
 
 > Copy file này (hoặc `guideline_v0_starter.md`) rồi viết. Một guideline đủ gồm **5 phần**. Câu nào của v0
 > làm hai người đọc ra hai cách khác nhau thì phải viết lại cho một cách hiểu duy nhất.
 
 - Phiên bản: v0
 - Ngày: 16/11/2026
-- Người viết / duyệt: Trịnh Vinh Khánh/Nguyễn Hải Đăng.
+- Người viết / duyệt: 102 / 101
 
 ## 1. Mục tiêu
 
