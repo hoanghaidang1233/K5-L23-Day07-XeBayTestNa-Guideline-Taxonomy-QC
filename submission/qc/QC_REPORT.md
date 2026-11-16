@@ -6,7 +6,7 @@
 - Nguồn và phép sử dụng dữ liệu: ảnh lấy từ Wikimedia Commons, ghi công từng ảnh (tên gốc, tác giả, giấy phép CC BY / CC BY-SA / CC0 / public domain, link) trong `data/ATTRIBUTION.csv`. Dùng cho mục đích học tập; khi chia sẻ lại phải giữ ghi công và điều kiện giấy phép (ảnh CC BY-SA: bản phái sinh phải cùng giấy phép).
 - Manifest và checksum nhãn cuối: `submission/qc/batch_manifest.json`; nhãn cuối `labels_calibrated.json` SHA-256 `48e02870f8843a7be0e51bd5b3275be013ce824423d06c5259753d5e7aa83776` (40 ảnh, 318 annotation).
 - Guideline và taxonomy khi gán / khi bàn giao: gán theo guideline v1.0 và taxonomy v1.0 (8 lớp); bàn giao theo guideline v1.1 (`guideline_v1.1_calibrated.md`, thay đổi semantic), taxonomy giữ v1.0.
-- Sửa script (theo RULES.md): sửa `scripts/make_cvat_labels.py` để CVAT bản mới nhận cấu hình nhãn: (1) checkbox `can_review` xuất `values: []` gây lỗi "attribute values must be a non-empty array" → đổi thành `["false"]`; (2) thiếu trường `type` gây lỗi "unknown label type undefined" → thêm `"type": "rectangle"`. Taxonomy không đổi; unit test 19/20 (test còn lại lỗi do quyền tạo symlink trên Windows).
+- Sửa script (theo RULES.md): sửa `scripts/make_cvat_labels.py` để CVAT bản mới nhận cấu hình nhãn: (1) checkbox `can_review` xuất `values: []` gây lỗi "attribute values must be a non-empty array" → đổi thành `["false"]`; (2) thiếu trường `type` gây lỗi "unknown label type undefined" → thêm `"type": "rectangle"`. Taxonomy không đổi; unit test 20/20 OK (`python -m unittest discover -s tests -v`, sau khi bật Developer Mode để Windows cho tạo symlink).
 
 ## 2. Phân công và đồng thuận trước calibration
 
