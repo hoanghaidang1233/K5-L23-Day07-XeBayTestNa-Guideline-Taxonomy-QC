@@ -65,7 +65,7 @@ Nhãn dùng để dạy mô hình **phát hiện người và phương tiện** 
 | **R-09** | **Xe chủ** (mui, tay lái, gương, thân xe đang chở camera) → không gán. |
 | **R-10** | **Ảnh mờ / tối:** còn nhận ra lớp và ranh giới → gán bình thường; không nhận ra lớp → không gán; phân vân → gán và tick `can_review`. |
 | **R-11** | **Ca chưa có quy tắc:** đã vẽ box → tick `can_review`; chưa vẽ được box → ghi `ảnh, mã người gán, vùng, lý do` để đưa vào `image_issues.csv`. **Không tự đoán, không đổi guideline giữa Pha 3.** |
-
+| **R-12** | **Ảnh phản chiếu qua gương:** Không vẽ bbox.** |
 ---
 
 ## 4. Ca khó
