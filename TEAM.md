@@ -7,8 +7,8 @@
 
 | STT | MSHV | Họ và tên | Lớp (L2 / L3 / khác) | Tài khoản GitHub |
 |---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
+| 1 | 2A202603189|Hoàng Hải Đăng | L2|hoanghaidang1233 |
+| 2 | | | | |git pull --rebase
 | 3 | | | | |
 
 Danh sách trên phải khớp dòng tiêu đề của `README.md` (đã đổi theo [SUBMISSION.md](SUBMISSION.md)) và `--members` đã dùng ở `scripts/split_assign.py`.
