@@ -1,59 +1,23 @@
-# CVAT: cài đặt và dùng cho lab
+# CVAT và COCO cho Day 07
 
-Dùng **cvat.ai** (bản cloud, tài khoản miễn phí) hoặc CVAT tự cài của lớp. Học viên đã dùng CVAT ở Day 02–05.
+Dùng instance CVAT do lớp chỉ định. Coach kiểm quyền tạo Task và xuất/nhập COCO trước buổi. Khi chia sẻ artifact, dùng mã thành viên.
 
-## 1. Tạo Project với nhãn của nhóm
+## Tạo task gán độc lập
 
-1. **Projects → Create new project**, đặt tên `day07-<MSHV>`.
-2. Mục **Labels → Raw**: dán toàn bộ nội dung `cvat/labels_generated.json` (sinh bằng `python scripts/make_cvat_labels.py`
-   sau khi nhóm sửa `submission/taxonomy.json`). Bấm **Done**, rồi **Submit & Open**.
-3. Kiểm tra: mỗi lớp có đủ thuộc tính `occluded_level`, `truncated`, `can_review` (riêng `ignore_region` không cần thuộc tính).
+1. Chạy `python scripts/make_cvat_labels.py`. Trong **Projects → Create new project → Labels → Raw**, dán `cvat/labels_generated.json` và lưu.
+2. Tạo Task riêng, chọn Project và tải ảnh trong `work/<mã>/images/`. Số frame phải khớp danh sách phân công.
+3. Chọn **Rectangle**, lớp và thuộc tính. Phím `N` bắt đầu vẽ, `F`/`D` đi qua ảnh, `Ctrl+S` lưu (biến thể tùy máy). Gán `occluded_level` của nhóm. Cờ occluded sẵn trong CVAT là trường khác.
+4. Với vùng bỏ qua, dùng rectangle lớp `ignore_region`. Với box mơ hồ, tick `can_review`. Với vùng chưa có box, ghi vấn đề cấp ảnh. Ảnh không có đối tượng vẫn nằm trong Task.
 
-Nhãn trong CVAT **phải trùng tên** với `taxonomy.json`; script so khớp theo tên lớp.
+## Xuất COCO 1.0
 
-## 2. Tạo Task với đúng ảnh của bạn
+Trong **Actions → Export task dataset**, chọn **COCO 1.0**, bỏ chọn tải ảnh, rồi tải file trong **Requests**. Giải nén và lấy JSON ở `annotations/instances_<subset>.json` (thường là `instances_default.json`). Lưu theo mã như `submission/labels/101.json`. Chạy `python scripts/validate_labels.py submission/labels/101.json`; kiểm đặc biệt ảnh trống và các trường trong `attributes`.
 
-1. **Create new task**, chọn Project ở bước 1.
-2. Upload **tất cả ảnh trong `work/<MSHV>/images/`** (kéo thả thư mục hoặc chọn nhiều file). Không upload ảnh ngoài danh sách.
-3. Đếm: số ảnh trong Task phải bằng số dòng trong `submission/qc/assignments/<MSHV>.txt`.
+## Sửa và review
 
-## 3. Gán box
+1. Sau khi điền quyết định, chạy `python scripts/prepare_calibration.py`. Tạo Task từ `work/calib/images/`. Nếu taxonomy đổi, tạo Project từ `cvat/labels_final.json` do `make_cvat_labels.py --final` sinh ra.
+2. Nếu script tạo `work/calib/consensus_flagged.json`, dùng **Actions → Upload annotations → COCO 1.0**. Nếu schema không còn tương thích, áp dụng mapping hoặc gán lại theo quyết định rồi xuất COCO.
+3. Nếu instance có Review mode, mở issue trên box hoặc vùng ảnh. Ghi mã ca, mã quy tắc, cách sửa và kết quả reviewer kiểm lại. Dùng ảnh chồng box và CSV nếu thiếu quyền Review.
+4. Xuất COCO 1.0 và lưu theo đường dẫn có mã phiên bản mà `prepare_calibration.py` in ra. Giữ cùng tên ảnh. Nếu xuất thiếu thuộc tính, kiểm cấu hình Project và lưu lại box trước khi xuất.
 
-| Phím | Việc |
-|---|---|
-| `N` | vẽ box (lần đầu chọn **Rectangle**, đúng lớp) |
-| `Ctrl` + `1…9`, `0` | đổi lớp của box đang chọn |
-| `F` / `D` | ảnh sau / ảnh trước |
-| `Ctrl` + `S` | lưu (lưu thường xuyên) |
-
-- Bấm hai góc đối diện: box tự đóng. Chọn thuộc tính ở thẻ đối tượng (panel phải, mục Objects).
-- Cờ `occluded` có sẵn của CVAT (phím `Q`) **khác** `occluded_level` của nhóm: script bỏ qua cờ `Q`, chỉ đọc `occluded_level`.
-- Vùng bỏ qua: vẽ Rectangle lớp `ignore_region`.
-- Ca mơ hồ: mở thẻ đối tượng, tick `can_review`, ghi chú nơi quy ước (ví dụ tên file / mô tả trong chat nhóm **sau khi** nộp nhãn).
-- Ảnh không có vật nào cần gán: để trống, vẫn tính là đã gán.
-
-## 4. Export nhãn
-
-1. Menu **Actions → Export task dataset**.
-2. **Format: COCO 1.0**, **Save images: tắt**, OK.
-3. Tải file `.zip` từ trang **Requests**, giải nén: lấy `annotations/instances_default.json`.
-4. Đổi tên thành `submission/labels/<MSHV>_<HoTen>.json`.
-5. `python scripts/validate_labels.py --all` rồi commit.
-
-Bản gán nên ghi kèm phiên bản guideline (v1.0) trong tin nhắn commit.
-
-## 5. Task calibration (Pha 5)
-
-1. `python scripts/prepare_calibration.py` → `work/calib/images/` + `work/calib/consensus_flagged.json`.
-2. Tạo Task mới (cùng Project) từ các ảnh trong `work/calib/images/`.
-3. **Actions → Upload annotations → COCO 1.0** → chọn `work/calib/consensus_flagged.json`.
-4. Sửa theo quyết định calibration. Nếu CVAT không nạp thuộc tính, chọn lại bằng tay.
-5. Export COCO 1.0 → `submission/qc/labels_calibrated_flagged.json`.
-
-Nếu việc nạp nhãn nháp lỗi, gán lại các ảnh đó từ đầu (xem ảnh chồng nhãn trong `work/viz/` làm tham chiếu).
-
-## Gỡ rối
-
-- **Không thấy thuộc tính trong JSON export:** ở Project đặt `default_value`; mở một box, chọn thuộc tính, lưu rồi export lại.
-- **Tên file trong JSON có tiền tố `images/`:** bình thường, script bỏ tiền tố.
-- **Export báo lỗi:** đợi vài giây rồi tải lại ở trang Requests.
+[Tài liệu COCO của CVAT](https://docs.cvat.ai/docs/manual/advanced/formats/format-coco/) · [Manual QA](https://docs.cvat.ai/docs/qa-analytics/manual-qa/)

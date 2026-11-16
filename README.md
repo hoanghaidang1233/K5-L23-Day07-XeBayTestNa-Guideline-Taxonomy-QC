@@ -1,49 +1,27 @@
 # Day 07 Lab — Guideline, Taxonomy & QC
 
-**Nhóm 2–5 người · 4 giờ · 40 ảnh đường phố châu Á · gán box bằng CVAT**
+**Nhóm 2–5 người · 4 giờ · 40 ảnh đường phố và ca đối chứng · gán box bằng CVAT**
 
-Bạn nhận một guideline gán nhãn **sơ sài** và 40 ảnh chứa nhiều tình huống mà nó không nói tới.
-Việc của nhóm: **viết lại guideline cho đủ dùng**, chia việc, gán nhãn độc lập, đo độ đồng thuận, họp calibration,
-rồi quyết định **Release / Hold / Rework** cho lô nhãn.
+Bạn nhận một guideline sơ sài và bộ ảnh có tuk-tuk, xe chở xe, ảnh phản chiếu, tượng và ma-nơ-canh. Nhóm sẽ viết lại quy tắc, gán độc lập trên cùng một lô pilot, giải quyết chỗ bất đồng và bàn giao nhãn COCO 1.0 kèm bằng chứng để người khác kiểm lại.
 
 ![Mẫu ảnh trong bộ dữ liệu](docs/assets/sample_grid.jpg)
 
-*Có gì lạ trong ảnh? Tuk-tuk, xe chở xe, tượng, xe giả tưởng, tượng pickup, ma-nơ-canh… Guideline của bạn phải xử lý được chúng.*
-
-## Quy trình
-
-```mermaid
-flowchart LR
-  A[1. Guideline<br/>cá nhân] --> B[2. Thống nhất<br/>guideline]
-  B --> C[3. Chia ảnh<br/>và gán nhãn]
-  C --> D[4. So sánh<br/>đo IAA]
-  D --> E[5. Calibration]
-  E --> F[6. QC mẫu<br/>và báo cáo]
-```
-
-Trọng tâm là **guideline**: nhãn chỉ tốt khi mọi người hiểu quy tắc giống nhau.
+| Chặng | Bằng chứng nhóm tạo ra |
+|---|---|
+| Đặc tả | Guideline cá nhân, guideline v1.0 của nhóm, taxonomy |
+| Gán độc lập | Danh sách phân công và COCO riêng của từng người |
+| Calibration | Báo cáo đồng thuận, quyết định theo từng ca, guideline v1.1 và nhãn đã sửa |
+| Bàn giao | QC toàn bộ lô pilot, bản nhãn cuối, manifest và quyết định Release / Hold / Rework |
 
 ## Bắt đầu
 
-1. **Fork** repo thành repo **public** của nhóm, mời các bạn làm collaborator, mỗi người `git clone`.
-2. Đọc **[GUIDE.md](GUIDE.md)** (từng pha, lệnh chạy) và **[RULES.md](RULES.md)**.
-3. `pip install -r requirements.txt` (Python 3.9+).
+1. Clone [repo lab](https://github.com/VinUni-AI20k/K5-L23-Day07-Guideline-Taxonomy-QC) vào máy. Nhóm dùng repo riêng tư của lớp hoặc chuẩn bị gói nộp qua LMS theo hướng dẫn của coach.
+2. Cài Python 3.9 trở lên và chạy `python -m pip install -r requirements.txt`. Dùng tài khoản CVAT của lớp.
+3. Mỗi người nhận một mã như `101`. Đọc [hướng dẫn từng pha](GUIDE.md) và [quy tắc làm bài](RULES.md) trước khi xem ảnh.
 
-> **Khi nộp:** đổi dòng tiêu đề này thành `# Day 07 Lab — Nhóm <Tên>: <MSHV> - <Họ và tên>, …` cho đủ mọi thành viên. Xem [SUBMISSION.md](SUBMISSION.md).
+Mở [checkpoints](CHECKPOINTS.md) để theo dõi 4 giờ, [rubric](RUBRIC.md) để biết bằng chứng chấm và [hướng dẫn nộp](SUBMISSION.md) để rà gói bàn giao. Coach dùng [hướng dẫn chuẩn bị lớp](docs/COACH_GUIDE.md) và [ma trận kiểm thử](docs/TEST_MATRIX.md).
 
-## Tài liệu
-
-| Bạn cần | Xem |
-|---|---|
-| Các pha làm việc và lệnh | [GUIDE.md](GUIDE.md) |
-| Mốc tiến độ 4 giờ | [CHECKPOINTS.md](CHECKPOINTS.md) |
-| Quy tắc làm bài | [RULES.md](RULES.md) |
-| Chấm điểm (100 điểm) | [RUBRIC.md](RUBRIC.md) |
-| Sản phẩm phải nộp, tên repo, checklist | [SUBMISSION.md](SUBMISSION.md) |
-| Thông tin nhóm và kết quả tóm tắt | [TEAM.md](TEAM.md) |
-| Cài và dùng CVAT | [docs/CVAT_SETUP.md](docs/CVAT_SETUP.md) |
-| Công thức, ngưỡng, cây quyết định QC | [docs/QC_CHEATSHEET.md](docs/QC_CHEATSHEET.md) |
-| Mẫu báo cáo QC, ghi chú cá nhân | [docs/QC_REPORT_TEMPLATE.md](docs/QC_REPORT_TEMPLATE.md), [docs/INDIVIDUAL_NOTE_TEMPLATE.md](docs/INDIVIDUAL_NOTE_TEMPLATE.md) |
-| Các script | [scripts/README.md](scripts/README.md) |
-| Guideline khởi đầu (v0), khung viết guideline | [guideline/](guideline/) |
-| Nguồn và giấy phép ảnh | [data/README.md](data/README.md), [data/ATTRIBUTION.csv](data/ATTRIBUTION.csv) |
+- [CVAT và COCO](docs/CVAT_SETUP.md)
+- [Công thức và quyết định QC](docs/QC_CHEATSHEET.md)
+- [Nguồn ảnh và giấy phép](data/README.md)
+- [Lệnh và file đầu ra](scripts/README.md)
