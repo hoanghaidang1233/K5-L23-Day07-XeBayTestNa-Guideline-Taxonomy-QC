@@ -11,27 +11,13 @@
 
 ## 2. Pha 2: chỗ tôi bất đồng với nhóm
 
-- Trong bản cá nhân, tôi đề xuất xếp xe bán tải ở `img_028.jpg` vào lớp `truck`. Box của xe không mở rộng để bao vật hình ngựa trên thùng.
-- Ý kiến khác của thành viên trong nhóm: [Điền ý kiến thực tế; nếu không có bất đồng thì ghi rõ].
-- Cuối cùng nhóm thống nhất: [Điền quyết định trong guideline v1.0].
-- Tôi [đồng ý/chưa đồng ý] vì [nêu lý do cụ thể].
+
 
 ## 3. Pha 3: ảnh tôi đã gán
 
-- Số ảnh được giao: 8 ảnh, từ `img_025.jpg` đến `img_032.jpg` [đối chiếu lại danh sách phân công].
-- Số box đã vẽ: [Điền số thực tế].
-- Số lần tôi tick `can_review`: [Điền số thực tế].
-- Ca tôi thấy cần cân nhắc nhiều là `img_030.jpg`: nhiều xe máy đứng sát và che nhau, khó xác định phần nhìn thấy thuộc xe nào. Tôi cần phân biệt trường hợp còn gán riêng được với trường hợp cần review, tránh dùng `ignore_region` chỉ vì ảnh có nhiều đối tượng.
 
 ## 4. Pha 4–5: tôi lệch ở đâu
 
-- Các ca liên quan đến tôi trong `calibration_candidates.csv`: [Điền case_id và tên ảnh].
-- Nội dung bất đồng: [Sai lớp / lệch box / sai thuộc tính / bỏ sót / thừa].
-- Nguyên nhân: [Guideline chưa rõ hoặc tôi áp dụng chưa đúng], vì [nêu quy tắc và điểm khác nhau cụ thể].
-- Quyết định calibration tôi thấy quan trọng nhất: [Điền quyết định nhóm thực sự đã chốt].
-- Quyết định này giúp [nêu tác dụng] và được ghi tại [mã quy tắc trong guideline v1.1].
-
-> Nếu chưa chạy IAA hoặc họp calibration, ghi “Chưa thực hiện, sẽ bổ sung sau”; không kết luận chưa có lỗi.
 
 ## 5. Dùng AI
 
