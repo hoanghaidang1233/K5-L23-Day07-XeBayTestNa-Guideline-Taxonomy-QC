@@ -1,39 +1,51 @@
-# Guideline gán nhãn — <phiên bản> — <MSHV - Họ tên | Nhóm>
+# Guideline gán nhãn — <v1.0> — <101 - Hoàng Hải Đăng | XeBayTestNa>
 
 > Copy file này (hoặc `guideline_v0_starter.md`) rồi viết. Một guideline đủ gồm **5 phần**. Câu nào của v0
 > làm hai người đọc ra hai cách khác nhau thì phải viết lại cho một cách hiểu duy nhất.
 
-- Phiên bản: …
-- Ngày: …
-- Người viết / duyệt: …
+- Phiên bản: v0
+- Loại nhãn: bounding box (hộp chữ nhật) trên ảnh đường phố
+- Công cụ: CVAT, xuất COCO 1.0
+
+---
 
 ## 1. Mục tiêu
-Mô hình nào dùng nhãn này, để làm gì, sai ở đâu thì nguy hiểm.
+
+Nhãn dùng để huấn luyện mô hình phát hiện **người và phương tiện** trên ảnh đường phố
+(ví dụ cho camera giao thông hoặc xe tự lái).
 
 ## 2. Lớp và thuộc tính
-### Lớp
-| Lớp | Định nghĩa (một câu) | Ví dụ | Phản ví dụ / dễ nhầm với |
-|---|---|---|---|
-| | | | |
 
-Vật **không thuộc lớp nào** thì làm gì (không gán? vùng ignore? lớp mới?).
+### Lớp (mỗi vật thuộc đúng một lớp)
+
+| Lớp | Định nghĩa |
+|---|---|
+| `car` | Ô tô con. |
+| `truck` | Xe tải. |
+| `van` | Xe thùng kín cỡ nhỏ. |
+| `motorcycle` | Xe máy, mô tô. |
+| `person` | Người. |
+| `ignore_region` | Vùng không cần gán từng vật. |
 
 ### Thuộc tính
-Mỗi thuộc tính: tên, **các mức cố định**, nghĩa từng mức, **ngưỡng cụ thể** (ví dụ che bao nhiêu % thì mức nào).
+
+| Thuộc tính | Giá trị | Ý nghĩa |
+|---|---|---|
+| `occluded_level` | `0`, `1`, `2`, `3` | Mức bị che: 0 là thấy rõ, 1 là bị che ít, 2 là bị che nhiều, 3 là không rõ. |
+| `truncated` | `no`, `yes` | Vật bị cắt ở mép ảnh. |
+| `can_review` | tick / không | Tick khi bạn không chắc, để người khác xem lại. |
 
 ## 3. Quy tắc vẽ box
-Box ôm sát phần nhìn thấy; vật bị che; vật bị cắt mép ảnh; phản chiếu / hình in / tượng / đồ chơi; xe chủ (ego); vật quá nhỏ; đám đông; một vật có nhiều phần (người và xe)…
+
+1. Gán box cho mọi người và phương tiện trong ảnh.
+2. Box ôm sát vật.
+3. Chọn đúng lớp và thuộc tính.
 
 ## 4. Ca khó
-| Ảnh | Tình huống | Quyết định | Lý do |
-|---|---|---|---|
-| img_0xx | | | |
 
-Câu hỏi nào chưa chốt: gắn `can_review` và ghi lên trưởng nhóm. Không tự đoán.
+(chưa có)
 
 ## 5. QC và phiên bản
-Ngưỡng QC áp dụng, ai quyết ca mơ hồ, lịch sử thay đổi:
 
-| Phiên bản | Thay đổi | Lý do (ca nào) |
-|---|---|---|
-| | | |
+- Mọi thay đổi làm đổi nhãn đều tăng phiên bản guideline.
+- Ca mơ hồ: tick `can_review`.
